@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RaspberryPi Sample</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+      .hero.is-dark,
+      .footer.is-dark {
+        background-color: #838383;
+      }
+      .footer.is-dark p {
+        color: #ffffff;
+      }
+      .initial {
+        margin-right: 0.4rem;
+        font-size: 550%;
+        font-family: 'RocknRoll One', sans-serif;
+        opacity: 0.65;
+        position: absolute;
+        left: 10px;
+        top: -13px;
+      }
+      .data {
+        font-size: 52px;
+        line-height: 200%;
+        font-family: 'Lato', sans-serif !important;
+      }
+      .photo-box {
+        max-width: 800px;
+        margin: 25px auto;
+      }
+      .image {
+        border-radius: 30px;
+        margin: 0 auto;
+      }
+      @media screen and (max-width:639px) {
+        .initial {
+          opacity: 0.35;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <p class="title is-1">{{pd}} {{pt}}</p>
+        <p class="subtitle">RaspberryPi Sample</p>
+      </dv>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-desktop is-marginless">
+          <div class="column">
+            <div class="notification is-danger has-text-centered">
+              <span class="initial">温</span>
+              <p class="data">{{t|round(2)}}℃</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="notification is-info has-text-centered">
+              <span class="initial">湿</span>
+              <p class="data">{{h|round(2)}}%</p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-desktop is-marginless">
+          <div class="column">
+            <div class="photo-box">
+              <img class="image" src="/camera">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer is-dark">
+      <div class="content has-text-centered">
+        <p class="subtitle">RaspberryPi Sample</p>
+      </div>
+    </footer>
+
+    </body>
+</html>
